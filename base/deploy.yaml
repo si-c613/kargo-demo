@@ -15,6 +15,9 @@ spec:
       containers:
       - name: nginx 
         image: public.ecr.aws/nginx/nginx:placeholder
+        command:
+          - exit
+          - "1"
         volumeMounts:
         - name: content
           mountPath: /usr/share/nginx/html
