@@ -13,6 +13,16 @@ patches:
   target:
     kind: Service
     name: kargo-demo
+- patch: |-
+    - op: add
+      path: /spec/template/spec/containers/0/command/0
+      value: exit
+    - op: add
+      path: /spec/template/spec/containers/0/args/0
+      value: 1
+  target:
+    kind: Deployment
+    name: kargo-demo
 images:
 - name: public.ecr.aws/nginx/nginx
-  newTag: "1.27"
+  newTag: 1.27.1
