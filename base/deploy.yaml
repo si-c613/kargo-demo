@@ -16,6 +16,9 @@ spec:
       - name: nginx 
         image: public.ecr.aws/nginx/nginx:placeholder
         command:
+          - /bin/sh
+          - -c
+        args:
           - exit
           - "1"
         volumeMounts:
